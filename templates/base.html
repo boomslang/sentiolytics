@@ -1,0 +1,44 @@
+{% load url from future %}
+{% load static %}
+{% get_static_prefix as STATIC_URL %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Sentiolytics{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" charset="utf-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+    {% block scripts %}{% endblock %}
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+        </div>
+
+        <div id="page">
+            <div class="sidebar" id="sidebar-left">
+                {% block sidebar-left %}
+{#                    <br class="clearfix">#}
+                {% endblock %}
+
+            </div>
+            <div class="sidebar" id="sidebar-right">
+                {% block sidebar-right %}
+                    {#                    <br class="clearfix">#}
+                {% endblock %}
+            </div>
+{#            <br class="clearfix">#}
+            <div id="content">
+                {% block content %}
+                    <p>This block should be overwritten.</p>
+                {% endblock %}
+            </div>
+
+            <br class="clearfix">
+        </div>
+    </div>
+</body>
+</html>

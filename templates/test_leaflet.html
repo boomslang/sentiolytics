@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load leaflet_tags %}
+
+{% block head %}
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <style>
+
+        .leaflet-container {  /* all maps */
+            width:  600px;
+            height: 400px;
+        }
+
+        #specialbigmap {
+            height: 800px;
+        }
+
+    </style>
+{% endblock %}
+
+{% block scripts %}
+{#    function yourmapInit(map, bounds) {#}
+{##}
+{#        L.marker([50.5, 30.5]).addTo(map);#}
+{##}
+{#    }#}
+
+{% endblock %}
+
+{% block sidebar %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="box">
+    <p> Testing leaflet! </p>
+        {% leaflet_map "yourmap" %}
+    </div>
+{% endblock %}

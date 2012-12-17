@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/test.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/gcharts.js"></script>
+{% endblock %}
+
+{% block sidebar-left %}
+    <div class="box" id="player_box1">
+        <form action="">
+            <h3><label>
+                <input type="checkbox" name="cb_all_1" class="check_all" id="cb1">
+            </label>TEAM 1</h3>
+        </form>
+        <form action="" class="player_list" id="players_team1">
+{#            <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>#}
+{#            <input type="checkbox" name="vehicle" value="Car">I have a car#}
+        </form>
+    </div>
+{% endblock%}
+{% block sidebar-right %}
+    <div class="box" id="player_box2">
+        <form action="">
+            <h3><label>
+                <input type="checkbox" name="cb_all_2" class="check_all" id="cb2">
+            </label>TEAM 2</h3>
+        </form>
+        <form action="" class="player_list" id="players_team2">
+            {#            <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>#}
+            {#            <input type="checkbox" name="vehicle" value="Car">I have a car#}
+        </form>
+    </div>
+
+{#    <br class="clearfix">#}
+{% endblock %}
+
+{% block content %}
+    <div class="box">
+{#    <p> Testing! </p>#}
+{#        <label for="txtValue">Enter a value : </label>#}
+{#        <input type="text" name="txtValue" value="" id="txtValue">#}
+{##}
+{#        <div id="display"></div>#}
+{##}
+{#        <br>#}
+
+
+{#        <dl id="sample" class="dropdown">#}
+{#            <dt><a href="#"><span>United States<img class="flag flagvisibility" src="us.png" alt=""><span class="value">US</span></span></a></dt>#}
+{#            <dd>#}
+{#                <ul style="display: none;">#}
+{#                    <li><a href="#">Brazil<img class="flag flagvisibility" src="br.png" alt=""><span class="value">BR</span></a></li>#}
+{#                    <li><a href="#">France<img class="flag flagvisibility" src="fr.png" alt=""><span class="value">FR</span></a></li>#}
+{#                    <li><a href="#">Germany<img class="flag flagvisibility" src="de.png" alt=""><span class="value">DE</span></a></li>#}
+{#                    <li><a href="#">India<img class="flag flagvisibility" src="in.png" alt=""><span class="value">IN</span></a></li>#}
+{#                    <li><a href="#">Japan<img class="flag flagvisibility" src="jp.png" alt=""><span class="value">JP</span></a></li>#}
+{#                    <li><a href="#">Serbia<img class="flag flagvisibility" src="cs.png" alt=""><span class="value">CS</span></a></li>#}
+{#                    <li><a href="#">United Kingdom<img class="flag flagvisibility" src="gb.png" alt=""><span class="value">UK</span></a></li>#}
+{#                    <li><a href="#">United States<img class="flag flagvisibility" src="us.png" alt=""><span class="value">US</span></a></li>#}
+{#                </ul>#}
+{#            </dd>#}
+{#        </dl>#}
+{#        <span id="result">Selected value is: US</span>#}
+
+        <br>
+        <div id="chart_div"></div>
+        <br>
+{#        {% for obj in result %}#}
+{##}
+{#                {% for element in obj%}#}
+{#                    <p>#}
+{#                    {{ element }}#}
+{#                    </p>#}
+{#                {% endfor %}#}
+{#            <br>#}
+{#        {% endfor %}#}
+{#        {{ result}}#}
+
+    </div>
+{#    <br class="clearfix">#}
+{% endblock %}
