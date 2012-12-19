@@ -8,15 +8,72 @@
     <title>{% block title %}Sentiolytics{% endblock %}</title>
 
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/menu.css" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/vertical_menu.css" charset="utf-8" />
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ STATIC_URL }}js/load_menu_items.js" type="text/javascript" charset="utf-8"></script>
 
     {% block scripts %}{% endblock %}
     {% block head %}{% endblock %}
 </head>
 <body>
+    <div id='cssmenu'>
+        <ul>
+            <li class='active '><a href='/'><span>Home</span></a></li>
+            <li class='has-sub '><a href='#'><span>Leagues</span></a>
+                <ul>
+                    {% for id, name in leagues %}
+                        <li><a class='league_item' id='{{ id }}'><span>{{ name}}</span></a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li class='has-sub '><a href='#'><span>Matches</span></a>
+                <ul id="match_list">
+
+                </ul>
+            </li>
+            <li class='has-sub '><a href='#'><span>Dummy</span></a>
+                <ul>
+                    <li class='has-sub '><a href='#'><span>Product 1</span></a>
+                        <ul>
+                            <li><a href='#'><span>Sub Item</span></a></li>
+                            <li><a href='#'><span>Sub Item</span></a></li>
+                        </ul>
+                    </li>
+                    <li class='has-sub '><a href='#'><span>Product 2</span></a>
+                        <ul>
+                            <li><a href='#'><span>Sub Item</span></a></li>
+                            <li><a href='#'><span>Sub Item</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href='#'><span>Dummy</span></a></li>
+            <li><a href='#'><span>Dummy</span></a></li>
+        </ul>
+    </div>
+
+    <div id='verticalmenu'>
+        <ul>
+            <li class='has-sub '><a href='#'><span>Performance</span></a>
+                <ul>
+{#                    <li class='has-sub '><a href='#'><span>Product 1</span></a>#}
+{#                        <ul>#}
+{#                            <li><a href='#'><span>Sub Item</span></a></li>#}
+{#                            <li><a href='#'><span>Sub Item</span></a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+                    <li><a id="distance_metric"><span>Distance</span></a></li>
+                </ul>
+            </li>
+            <li><a href='#'><span>dummy</span></a></li>
+            <li><a href='#'><span>dummy</span></a></li>
+        </ul>
+    </div>
     <div id="wrapper">
-        <div id="header">
-        </div>
+{#        <div id="header">#}
+{#        </div>#}
 
         <div id="page">
             <div class="sidebar" id="sidebar-left">

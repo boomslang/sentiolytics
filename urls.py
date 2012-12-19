@@ -23,6 +23,7 @@ urlpatterns = patterns('',
     (r'^gcharts_test/$', 'sentio.sentiolytics.views.gcharts'),
     (r'^load_players/$', 'sentio.sentiolytics.views.load_players'),
     (r'^ajax_update_chart/$', 'sentio.sentiolytics.views.update_chart'),
+    (r'^ajax_load_matches/$', 'sentio.sentiolytics.views.ajax_load_matches'),
 #    (r'^map/$', 'sentio.sentiolytics.views.leaflet_view'),
 
     ################
